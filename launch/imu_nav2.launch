@@ -1,0 +1,12 @@
+<launch>
+<!--    This launch file is used to launch driver for lpms-nav2 sensor. Its protocol is different from other lpms IMU sensor-->
+    <node name="lpms_imu" pkg="lpms_imu" type="lpms_imu" output="screen" respawn="false">
+    <param name="imu_port" type="string" value="/dev/imu"/>
+    <param name="imu_rate" type="int" value="100"/>
+    <param name="imu_port_baud" type="int" value="115200"/>
+    <param name="imu_frame_id" type="string" value="gyro_link"/>
+    <param name="fix_frame_id" type="string" value="fix"/>
+    <param name="publish_tf" type="bool" value="false"/>
+    </node>
+</launch>
+

@@ -1,0 +1,12 @@
+<launch>
+    <node name="lpms_imu_common" pkg="lpms_imu" type="lpms_imu_common" output="screen" respawn="false">
+    <param name="port" type="string" value="/dev/imu"/>
+    <param name="rate" type="int" value="100"/>
+    <param name="frame_id" type="string" value="gyro_link"/>
+    <param name="enable_time_sync" type="bool" value="false"/>
+    <param name="sensor_model" type="string" value="DEVICE_LPMS_RS232"/>
+        <remap from="imu" to="/imu_me1"/>
+        <remap from="mag" to="/mag_me1"/>
+    </node>
+</launch>
+
